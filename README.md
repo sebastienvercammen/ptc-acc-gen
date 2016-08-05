@@ -7,6 +7,9 @@ This project was started as a proof of concept: even multi-billion dollar compan
 More about plus signs in e-mail addresses [on StackExchange](http://security.stackexchange.com/questions/65244/what-are-the-security-reasons-for-disallowing-the-plus-sign-in-email-addresses).
 
 If you're using Gmail and want to automatically verify all accounts, use this gist: https://gist.github.com/sebastienvercammen/e7e0e9e57db246d7f941b789d8508186
+or
+https://github.com/FrostTheFox/ptc-acc-gen/blob/master/gmailverify.js
+
 
 The new version on Nightmare.js now:
 
