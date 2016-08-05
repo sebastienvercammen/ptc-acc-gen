@@ -1,0 +1,19 @@
+{
+  "name": "nintendo-ptc-account-generator",
+  "version": "1.1.0",
+  "description": "An automation script based on CasperJS and PhantomJS that can create any number of Nintendo Pokémon Trainer Club (PTC) accounts with a single e-mail address.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "nintendo",
+    "ptc",
+    "pokemon",
+    "pokemongo",
+    "accounts",
+    "generator"
+  ],
+  "author": "Sébastien Vercammen",
+  "dependencies": {
+    "nightmare": "^2.6.0"
+  }
+}
