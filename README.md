@@ -32,7 +32,7 @@ The new version on Nightmare.js now:
 3. Run the script with Node.js:
     `node index.js`
 4. Run the ToS script with Python:
-    `python output/tos.py accounts.txt`
+    `python tos.py output\accounts.txt`
 
 ## Configuration
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
