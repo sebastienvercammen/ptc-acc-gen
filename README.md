@@ -23,6 +23,7 @@ The new version on Nightmare.js now:
 ## Requirements
 ### Prerequisites
 * [Node.js](https://nodejs.org/en/)
+* [Python](https://www.python.org/)
 
 ## Usage
 
@@ -30,6 +31,8 @@ The new version on Nightmare.js now:
 2. Open [index.js](index.js) and edit the settings at the top of the file.
 3. Run the script with Node.js:
     `node index.js`
+4. Run the ToS script with Python:
+    `python output/tos.py accounts.txt`
 
 ## Configuration
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
