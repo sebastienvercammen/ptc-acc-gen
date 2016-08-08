@@ -30,6 +30,9 @@ The new version on Nightmare.js now:
 3. Run using makeaccounts.sh on Linux, or makeaccounts.bat on Windows.
 4. Find the generated accounts in PogoPlayer/accounts.csv.
 
+***Note: This message: `... Run this to try different name!:nown as username
+node name.js -a ptc -u username -p password -l LATITUDE,LONGITUDE -u TRAINER-NAME` Is NOT an error and you should not be concerned by it.***
+
 ## Configuration
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
 This example corresponds to the default settings. It will generate 10 accounts in the same format: user0, user1, ...
