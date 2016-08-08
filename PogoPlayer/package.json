@@ -1,0 +1,24 @@
+{
+  "name": "PogoPlayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "pogobuf": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRokas/PogoPlayer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MRokas/PogoPlayer/issues"
+  },
+  "homepage": "https://github.com/MRokas/PogoPlayer#readme"
+}
