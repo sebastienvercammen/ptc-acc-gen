@@ -24,6 +24,7 @@ The new version on Nightmare.js now:
 * [Node.js](https://nodejs.org/en/)
 
 ## Usage
+***Linux users, you cannot run this from SSH or a plain terminal. You need to run from a GUI.
 
 1. Install requirements with `npm install`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
