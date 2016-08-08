@@ -4,6 +4,11 @@
   "description": "An automation script based on CasperJS and PhantomJS that can create any number of Nintendo Pokémon Trainer Club (PTC) accounts with a single e-mail address.",
   "main": "index.js",
   "scripts": {},
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/FrostTheFox/ptc-acc-gen.git"
+  },
+  "license" : "MIT",
   "keywords": [
     "nintendo",
     "ptc",
