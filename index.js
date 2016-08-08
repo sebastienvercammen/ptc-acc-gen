@@ -21,7 +21,7 @@ var screenshotFolder = "output/screenshots/";
 
 var country = "US"; // Country code (e.g. BE, FR, US, CA)
 var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
-var username = "CHANGEME"; // User- & display name. Make sure any "(username + number)@domain.com" is 100% unique.
+var username = "CHANGEME"; // User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
 var password = "CHANGEME"; // Static password for all accounts. Ignored if useRandomPassword is true.
 var email_user = "username"; // If your email is email@domain.com, enter "email"
 var email_domain = "domain.com"; // Domain of e-mail host
