@@ -15,16 +15,18 @@ var useRandomPassword = true; // Generate a random password?
 var screenshotResult = true; // Saves a screenshot per account creation if set to true
 var screenshotOnFailure = true; // Saves a screenshot even if registration failed
 
-var outputFile = "output/accounts.txt"; // File which will contain the generated "username password" combinations.
-var outputFormat = "%NICK% %PASS%\r\n"; // Format used to save the account data in outputFile. Supports %NICK%, %PASS%.
+var outputFile = "PogoPlayer/accounts.csv"; // File which will contain the generated "username password" combinations.
+var outputFormat = "ptc,%NICK%,%PASS%,%LAT%,%LON%,%UN%\r\n"; // Format used to save the account data in outputFile. Supports %NICK%, %PASS%.
 var screenshotFolder = "output/screenshots/";
 
 var country = "US"; // Country code (e.g. BE, FR, US, CA)
 var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
 var username = "CHANGEME"; // User- & display name. Make sure any "(username + number)@domain.com" is 100% unique.
 var password = "CHANGEME"; // Static password for all accounts. Ignored if useRandomPassword is true.
-var email_user = "CHANGEME"; // If your email is email@domain.com, enter "email"
-var email_domain = "CHANGEME.com"; // Domain of e-mail host
+var email_user = "username"; // If your email is email@domain.com, enter "email"
+var email_domain = "domain.com"; // Domain of e-mail host
+var lat = "LATITUDE" // Location Latitude for initial login
+var lon = "LONGITUDE" // Location Longitude for initial login
 
 // App data
 var url_ptc = "https://club.pokemon.com/us/pokemon-trainer-club/sign-up/";
@@ -218,7 +220,7 @@ function fillSignupPage(ctr) {
         .then(function(success) {
             if(success) {
                 // Log it in the file of used nicknames
-                var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass);
+                var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass).replace('%LAT%', lat).replace('%LON%', lon).replace('%UN%', _nick);
                 fs.appendFile(outputFile, content, function(err) {
                     //
                 });
