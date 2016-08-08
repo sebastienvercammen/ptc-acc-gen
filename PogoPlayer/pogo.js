@@ -42,8 +42,10 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 function pickTrainerName (client, a) {
+  a[5] = a[5].replace(/\r/g, '');
   if (a[5].length > 12) {
-    console.log(`Seems like ${a[5]} is too long name... (PROTIP: It can't exceed 12 characters!) Run this to try different name!:\nnode name.js -a ${a[0]} -u ${a[1]} -p ${a[2]} -l ${a[3]},${a[4]} -u TRAINER-NAME`)
+    console.log(`Seems like ${a[5]} is too long name... (PROTIP: It can't exceed 12 characters!) Run this to try different name!:
+node name.js -a ${a[0]} -u ${a[1]} -p ${a[2]} -l ${a[3]},${a[4]} -u TRAINER-NAME`); 
   }
   new Promise(resolve=>{
     resolve(client.checkCodenameAvailable(a[5]));
@@ -55,7 +57,8 @@ function pickTrainerName (client, a) {
         console.log(`Your trainer now is known as ${a[5]}!`);
       }).catch(err => {"Failed to set name... ERROR:", console.error(err);});
     } else {
-      console.log(`Seems like there's already someone known as ${a[5]}... Run this to try different name!:\nnode name.js -a ${a[0]} -u ${a[1]} -p ${a[2]} -l ${a[3]},${a[4]} -u TRAINER-NAME`);
+      console.log(`Seems like there's already someone known as ${a[5]}... Run this to try different name!:
+node name.js -a ${a[0]} -u ${a[1]} -p ${a[2]} -l ${a[3]},${a[4]} -u TRAINER-NAME`);
     }
   }).catch(err => {console.error("Failed to check for name... ERROR:", err);});
 }
