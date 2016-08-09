@@ -24,12 +24,20 @@ The new version on Nightmare.js now:
 * [Node.js](https://nodejs.org/en/)
 
 ## Usage
-***Linux users, GUI and headless are now both supported using the .sh file.***
+Windows Instructions:
 
 1. Install requirements with `npm install`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
-3. Run using makeaccounts.sh on Linux, or makeaccounts.bat on Windows.
+3. Run using `makeaccounts.bat`.
 4. Find the generated accounts in PogoPlayer/accounts.csv.
+
+Linux Instructions:
+
+1. Run `install.sh`
+2. Open [index.js](index.js) and edit the settings at the top of the file.
+3. Run using `makeaccounts.sh`.
+4. Find the generated accounts in PogoPlayer/accounts.csv.
+
  
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
 
