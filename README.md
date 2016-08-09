@@ -24,15 +24,24 @@ The new version on Nightmare.js now:
 * [Node.js](https://nodejs.org/en/)
 
 ## Usage
-***Linux users, you cannot run this from SSH or a plain terminal. You need to run from a GUI.***
+***Linux users, if you are running from a GUI, you may use the instructions below. For headless users (SSH or non-GUI terminal), please use the headless instructions.***
 
 1. Install requirements with `npm install`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
 3. Run using makeaccounts.sh on Linux, or makeaccounts.bat on Windows.
 4. Find the generated accounts in PogoPlayer/accounts.csv.
+ 
+***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
 
-***Note: This message: `... Run this to try different name!:nown as username
-node name.js -a ptc -u username -p password -l LATITUDE,LONGITUDE -u TRAINER-NAME` Is NOT an error and you should not be concerned by it.***
+## Headless Linux Instructions
+***These instructions are experimental. The recommended method to running on Linux is via a GUI.***
+
+1. Install requirements with `npm install`.
+2. Install xvfb using your distro's package manager.
+3. Open [index.js](index.js) using your text editor, and edit the settings at the top of the file.
+4. Run using `xvfb-run --server-args="-screen 0 1024x768x24" ./makeaccounts.sh`.
+5. Find the generated accounts in PogoPlayer/accounts.csv.
+
 
 ## Configuration
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
