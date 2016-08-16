@@ -5,7 +5,7 @@ var fs = require('fs');
 
 // Settings
 var debug = false;
-var showWindow = false;
+var showWindow = true;
 
 var start = 0; // Start from x (NAMEx, EMAIL+x@domain.com)
 var end = 10;
@@ -210,7 +210,6 @@ function fillSignupPage(ctr) {
             document.getElementById("id_username").value = data.nick;
         }, { "pass": _pass, "nick": _nick, "email_user": email_user, "email_domain": email_domain })
         .check("#id_terms")
-        .click("form[name='create-account'] [type=submit]")
         .wait(function() {
             return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
         })
