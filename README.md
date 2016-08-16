@@ -1,6 +1,6 @@
 # Nintendo PTC Account Generator
 
-***It was fun, but I'm dropping support for this tool, please use alternative tools.***
+***Alright, fine. I guess I'll support it again for a little while, since our method is easy to accept the captcha with.***
 
 An automation script based on Nightmare.js that can create any number of Nintendo Pokémon Trainer Club accounts with a single  e-mail address. This only works because Nintendo doesn't check for "email+1@domain.com" e-mail tricks, where the e-mail host completely ignores any part after (and including) the plus sign and sends it to "email@domain.com".
 
