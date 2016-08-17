@@ -32,7 +32,7 @@ Windows Instructions:
 3. Run using `makeaccounts.bat`.
 4. Find the generated accounts in PogoPlayer/accounts.csv.
 
-Linux Instructions:
+Linux Instructions:  
 ***Headless systems will no longer be able to use the gen due to the captcha requirement.***
 
 1. Run `install.sh`
