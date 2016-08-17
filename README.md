@@ -33,6 +33,7 @@ Windows Instructions:
 4. Find the generated accounts in PogoPlayer/accounts.csv.
 
 Linux Instructions:
+***Headless systems will no longer be able to use the gen due to the captcha requirement.***
 
 1. Run `install.sh`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
