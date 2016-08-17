@@ -30,7 +30,9 @@ Windows Instructions:
 1. Install requirements with `npm install`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
 3. Run using `makeaccounts.bat`.
-4. Find the generated accounts in PogoPlayer/accounts.csv.
+4. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
+5. Repeat for all accounts
+6. Find the generated accounts in PogoPlayer/accounts.csv.
 
 Linux Instructions:  
 ***Headless systems will no longer be able to use the gen due to the captcha requirement.***
@@ -38,7 +40,9 @@ Linux Instructions:
 1. Run `install.sh`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
 3. Run using `makeaccounts.sh`.
-4. Find the generated accounts in PogoPlayer/accounts.csv.
+4. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
+5. Repeat for all accounts
+6. Find the generated accounts in PogoPlayer/accounts.csv.
 
  
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
