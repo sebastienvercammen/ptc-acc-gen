@@ -7,19 +7,21 @@ if not "%errorlevel%" == "0" (
 	echo If using 32-bit or alternate install path, replace your git path in the above command
 	pause
 ) else (
+	echo attempting to clone PogoPlayer
 	git submodule init 2>&1 >NUL
 	git submodule update 2>&1 >NUL
 	if not "%errorlevel%" == "0" (
 		echo submodule install failed.
 		echo Maybe try cloning recursively?
 		echo git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
-	) else (	
-		node --version 2>&1 >NUL
-	)
-	if not "%errorlevel%" == "0" (
-		echo NodeJS is not currently installed correctly. Please install that, then run "npm install" from your PokemonGo-Map folder.
 	) else (
-		npm install
+		node --version >NUL
+		if "%errorlevel%" == "9009" (
+			echo NodeJS is not currently installed correctly. Please install that, then run "npm install" from your PokemonGo-Map folder.
+		) else (
+			echo NodeJS installed, proceeding with installation
+			npm install
+		)
 	)
-	fi
-exit
+)
+pause
