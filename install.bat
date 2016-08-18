@@ -20,6 +20,6 @@ if %errorlevel% NEQ 0 (
 	if [ $? -ne 0 ] ; then
 			echo NodeJS is not currently installed correctly. Please install that, then run "npm install" from your PokemonGo-Map folder.
 		else
-			sudo npm install
+			npm install
 	fi
 exit
