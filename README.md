@@ -1,6 +1,6 @@
 # Nintendo PTC Account Generator
 
-***Alright, fine. I guess I'll support it again for a little while, since our method is easy to accept the captcha with.***
+***Supported once again! Please use the [PokemonGo-Dev Discord](https://discord.gg/g6k7w83) for questions.***
 
 **Please be sure to clone RECURSIVELY**
 example: git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
