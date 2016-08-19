@@ -30,7 +30,7 @@ var lon = "LONGITUDE" // Location Longitude for initial login
 
 // App data
 var url_ptc = "https://club.pokemon.com/us/pokemon-trainer-club/sign-up/";
-var useragent = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
+var useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36";
 var nightmare_opts = {
     show: showWindow,
     waitTimeout: 10000,
