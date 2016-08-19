@@ -32,9 +32,10 @@ Windows Instructions:
 
 New beta install script! try running "install.bat" (and tell pyr0ball if something doesn't work)
 
-1. Make sure you clone recursively (git clone --recursive [origin]).
+1. Make sure you clone recursively (git clone --recursive [origin])
   - if you download the zip, make sure you also download the submodule PogoPlayer
   - or do it the easy way with `git submodule init && git submodule update`
+  - if you cloned non-recursively, run install.bat.
 2. Install requirements with `npm install`
 2. Open [index.js](index.js) and edit the settings at the top of the file.
 3. Run using `makeaccounts.bat`.
