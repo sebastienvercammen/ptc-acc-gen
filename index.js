@@ -38,7 +38,7 @@ var nightmare_opts = {
     loadTimeout: 5000
 };
 // Prints nice little message
-console.log("ptc-acc-gen v1.4.0 by Sébastien Vercammen and Frost The Fox (and Github contribs)")
+console.log("ptc-acc-gen v1.4.1 by Sébastien Vercammen and Frost The Fox (and Github contribs)")
 
 
 // Settings check
