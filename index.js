@@ -211,7 +211,7 @@ function fillSignupPage(ctr) {
             document.getElementById("id_confirm_email").value = data.email_user + "+" + data.nick + "@" + data.email_domain;
             document.getElementById("id_screen_name").value = data.nick;
             document.getElementById("id_username").value = data.nick;
-			window.scrollTo(0,50000);
+		window.scrollTo(0,document.body.scrollHeight);
         }, { "pass": _pass, "nick": _nick, "email_user": email_user, "email_domain": email_domain })
         .check("#id_terms")
         .wait(function() {
