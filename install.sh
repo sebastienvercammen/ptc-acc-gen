@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-get install libnss3-dev
 which git 2>&1 >/dev/null
 if [ $? -ne 0 ] ; then
         echo git is not currently installed
