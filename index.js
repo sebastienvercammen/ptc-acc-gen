@@ -7,26 +7,29 @@ var fs = require('fs');
 var debug = false;
 var showWindow = true;
 
-var start = 0; // Start from x (NAMEx, EMAIL+x@domain.com)
-var end = 10;
+// Start Config File Imports
+var configFile = require('./config');
+var start = configFile.startNum;
+var end = configFile.endNum;
+var useNicknamesFile = configFile.nicknameFile;
+var useRandomPassword = configFile.randomPassword;
+var screenshotResult = configFile.screenshotResult;
+var screenshotFail = configFile.screenshotOnFailure;
+var username = configFile.username;
+var password = configFile.password;
+var email_user = configFile.emailUser;
+var email_domain = configFile.emailDomain;
+var lat = configFile.latitude;
+var lon = configFile.longitude;
+// End Config File Imports
 
-var useNicknamesFile = false; // Use nicknames file, or just append numbers to username?
-var useRandomPassword = true; // Generate a random password?
-var screenshotResult = true; // Saves a screenshot per account creation if set to true
-var screenshotOnFailure = true; // Saves a screenshot even if registration failed
+// Reports of changing this tossing errors so i didnt touch
+var country = "US"; // Country code (e.g. BE, FR, US, CA)
+var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
 
 var outputFile = "PogoPlayer/accounts.csv"; // File which will contain the generated "username password" combinations.
 var outputFormat = "ptc,%NICK%,%PASS%,%LAT%,%LON%,%UN%\r\n"; // Format used to save the account data in outputFile. Supports %NICK%, %PASS%.
 var screenshotFolder = "output/screenshots/";
-
-var country = "US"; // Country code (e.g. BE, FR, US, CA)
-var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
-var username = "CHANGEME"; // User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
-var password = "CHANGEME"; // Static password for all accounts. Ignored if useRandomPassword is true.
-var email_user = "username"; // If your email is email@domain.com, enter "email"
-var email_domain = "domain.com"; // Domain of e-mail host
-var lat = "LATITUDE" // Location Latitude for initial login
-var lon = "LONGITUDE" // Location Longitude for initial login
 
 // App data
 var url_ptc = "https://club.pokemon.com/us/pokemon-trainer-club/sign-up/";
