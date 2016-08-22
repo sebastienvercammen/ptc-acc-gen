@@ -37,7 +37,7 @@ New beta install script! try running "install.bat" (and tell pyr0ball if somethi
   - or do it the easy way with `git submodule init && git submodule update`
   - if you cloned non-recursively, run install.bat.
 2. Install requirements with `npm install`
-2. Open [index.js](index.js) and edit the settings at the top of the file.
+2. Open [config.js](config.js) and edit the settings in the file.
 3. Run using `makeaccounts.bat`.
 4. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
 5. Repeat for all accounts
@@ -61,32 +61,41 @@ Linux Instructions:
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
 This example corresponds to the default settings. It will generate 10 accounts in the same format: user0, user1, ...
 
-In [index.js](index.js):
+In [config.js](config.js):
 
-    var start = 0;                      // Start from x (NAMEx, EMAIL+x@domain.com)
-    var end = 10;                       // Up to x, but not including (exclusive)
-
-    var useNicknamesFile = false;           // Use nicknames file, or just append numbers to username?
-    var outputFile = 'accounts.txt';        // File which will contain the generated "username password" combinations.
-    var outputFormat = '%NICK% %PASS%\r\n'; // Format used to save the account data in outputFile. Supports %NICK%, %PASS%.
-    
-    var useNicknamesFile = false; // Use nicknames file, or just append numbers to username?
-    var useRandomPassword = true; // Generate a random password?
-    var screenshotResult = true; // Saves a screenshot per account creation if set to true
-    var screenshotOnFailure = true; // Saves a screenshot even if registration failed
+// Starts gen from startNumber to endNumber, determining how many accounts are made
+	startNum: 0,
+	endNum: 10,
+	
+	// Creation Options
+	nicknameFile: false, // Use nicknames file, or just append numbers to username?
+	randomPassword: false, // If true generate a random password, If false set "password" field below
+	screenshotResult: true, // Saves a screenshot per account creation when set to true
+	screenshotOnFailure: true, // Saves a screenshot even if registration fails when set to true
+	
+	// Creation Requirements
+	username: 'CHANGEME', // Keep the '', User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
+	password: 'CHANGEME', // If you set randomPassword to 'false' above change this to your chosen password (so you have same password for all accounts)
+	emailUser: 'email', // Enter your email address name. If your address is email@domain.com you'd enter 'email'
+	emailDomain: 'domain.com', // Domain of email address. If your address is email@domain.com  you'd enter 'domain.com'
+	latitude: 'LATITUDE', // Location Latitude for initial login
+	longitude: 'LONGITUDE' // Location Longitude for initial login
 
 ### 2. Generate random passwords per account.
-* Set `var useRandomPassword = true;` in [index.js](index.js).
 
-### 3. Save screenshots.
+ Set randomPassword: true, in [config.js](config.js).
+ 
+ Password for accounts will be random, aftyer finished find usernames and passwords in /PogoPlayer/accounts.csv
 
-    var screenshotResult = true; // Saves a screenshot per account creation if set to true
-    var screenshotOnFailure = true; // Saves a screenshot even if registration failed
-    var screenshotFolder = "output/screenshots/";
+### 3. Save screenshots (Default directory is /output/screenshots)
+
+	screenshotResult: true, // Saves a screenshot per account creation when set to true
+	screenshotOnFailure: true, // Saves a screenshot even if registration fails when set to true
 
 ### 4. Use a list of unique usernames instead of USERx combinations.
-The list of unique usernames must be stored in [nicknames.json](nicknames.json). An example is available on the repo.
 
-To create a number of accounts with custom usernames instead of user + number combinations, change [index.js](index.js):
+  To create a number of accounts with custom usernames instead of user + number combinations, change [index.js](index.js):
 
-    var useNicknamesFile = true;
+  Set nicknameFile: true, in [config.js](config.js).
+ 
+  The list of unique usernames must be stored in [nicknames.json](nicknames.json). An example is available on the repo.
