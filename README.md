@@ -32,16 +32,19 @@ Windows Instructions:
 
 New beta install script! try running "install.bat" (and tell pyr0ball if something doesn't work)
 
+
 1. Make sure you clone recursively (git clone --recursive [origin])
   - if you download the zip, make sure you also download the submodule PogoPlayer
   - or do it the easy way with `git submodule init && git submodule update`
   - if you cloned non-recursively, run install.bat.
 2. Install requirements with `npm install`
-2. Open [config.js](config.js) and edit the settings in the file.
-3. Run using `makeaccounts.bat`.
-4. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
-5. Repeat for all accounts
-6. Find the generated accounts in PogoPlayer/accounts.csv.
+3. Configure ptc-acc-gen to your settings
+   3a. **BETA** Run config.py, follow prompts, it will automatically fill out the config file for you. Any issues tell teknicsrx7
+   3b. Open [config.js](config.js) and edit the settings in the file.
+4. Run using `makeaccounts.bat`.
+5. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
+6. Repeat for all accounts
+7. Find the generated accounts in PogoPlayer/accounts.csv.
 
 Linux Instructions:  
 ***Headless systems will no longer be able to use the gen due to the captcha requirement.***
