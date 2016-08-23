@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo apt-get install libnss3-dev
+sudo apt-get install libxss1
 which git 2>&1 >/dev/null
 if [ $? -ne 0 ] ; then
         echo git is not currently installed
