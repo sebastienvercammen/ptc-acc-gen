@@ -24,3 +24,4 @@ if [ $? -ne 0 ] ; then
 			sudo npm install
 	fi
 fi
+python config.py
