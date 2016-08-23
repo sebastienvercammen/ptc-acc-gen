@@ -7,7 +7,7 @@ endNum:10,
 // Use nicknames file, or just append numbers to username?
 nicknameFile:false,
  // If true generate a random password, If false set "password" field below
-randomPassword:false,
+randomPassword:true,
 // Saves a screenshot per account creation when set to true
 screenshotResult:true,
 // Saves a screenshot even if registration fails when set to true
