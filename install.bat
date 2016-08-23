@@ -24,4 +24,5 @@ if not "%errorlevel%" == "0" (
 		)
 	)
 )
+python config.py
 pause
