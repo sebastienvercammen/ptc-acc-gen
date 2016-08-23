@@ -31,6 +31,7 @@ The new version on Nightmare.js now:
 Windows Instructions:
 
 New beta install script! try running "install.bat" (and tell pyr0ball if something doesn't work)
+  - If using the install script, you can simply run makeaccounts.bat afterwards.
 
 
 1. Make sure you clone recursively (git clone --recursive [origin])
@@ -38,9 +39,6 @@ New beta install script! try running "install.bat" (and tell pyr0ball if somethi
   - or do it the easy way with `git submodule init && git submodule update`
   - if you cloned non-recursively, run install.bat.
 2. Install requirements with `npm install`
-3. Configure ptc-acc-gen to your settings
-   3a. **BETA** Run config.py, follow prompts, it will automatically fill out the config file for you. Any issues tell teknicsrx7
-   3b. Open [config.js](config.js) and edit the settings in the file.
 4. Run using `makeaccounts.bat`.
 5. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
 6. Repeat for all accounts
@@ -50,11 +48,10 @@ Linux Instructions:
 ***Headless systems will no longer be able to use the gen due to the captcha requirement.***
 
 1. Run `install.sh`
-2. Open [index.js](index.js) and edit the settings at the top of the file.
-3. Run using `makeaccounts.sh`.
-4. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
-5. Repeat for all accounts
-6. Find the generated accounts in PogoPlayer/accounts.csv.
+2. Run using `makeaccounts.sh`.
+3. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
+4. Repeat for all accounts
+5. Find the generated accounts in PogoPlayer/accounts.csv.
 
  
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
