@@ -24,7 +24,7 @@ def printmenu():
     print ("1. Build Your Config")
     print ("0. Quit")
     print (30 * '-')
-    choice = raw_input('Enter your choice [0-8] : ')
+    choice = raw_input('Enter your choice [0-1] : ')
     try:
         choice = int(choice)
     except:
