@@ -232,7 +232,7 @@ function fillSignupPage(ctr) {
                 });
             }
             
-            if((success && screenshotResult) || screenshotOnFailure) {
+            if((success && screenshotResult) || screenshotFail) {
                 // Screenshot
                 nightmare.screenshot(screenshotFolder + _nick + ".png");
             }
