@@ -25,7 +25,9 @@ emailDomain:"gmail.com",
 // Location Latitude for initial login
 latitude:"36.54596",
 // Location Longitude for initial login
-longitude:"-79.22247"
+longitude:"-79.22247",
+// Country code (e.g. BE, FR, US, CA)
+country:"US"
 };
 
 module.exports = config;
