@@ -50,12 +50,15 @@ def configBuilder():
     screenshotOnFailure = raw_input("Save Screenshot of each Failure? (recommend: true): ")
     username = raw_input("Choose User/Display name, at least 6 chars and less than 15: ")
     if randomPassword.lower() in ("false"):
-        password = raw_input("Choose Static Password for Accounts: ")
+            password = raw_input("Choose Static Password for Accounts: ")
+    else:
+            password = "NOSTATIC"
     emailUser = raw_input("Email Address Name (whats before the @ in your email address? ex: yoloswag420): ")
     emailDomain = raw_input("Email Domain (whats after the @ in your email address? ex: gmail.com): ")
     latitude = raw_input("Latitude for Registration (example: 36.54596): ")
     longitude = raw_input("Longitude for Registration (example: -79.22247): ")
-
+    country = raw_input("Country Code for Registration (example: US, BE, FR, CA): ")
+    
     #Now lets check what people input vs what is valid
     flag = 1
     while flag == 1:
@@ -154,8 +157,8 @@ def configBuilder():
             else:
                     flag = 0
 
-    vars = ['startNum', 'endNum','nicknameFile','randomPassword','screenshotResult','screenshotOnFailure','username','password','emailUser','emailDomain','latitude','longitude']
-    new_values = [startNum + ',',endNum + ',',nicknameFile + ',',randomPassword + ',',screenshotResult + ',',screenshotOnFailure + ',','"' + username + '",','"' + password + '",','"' + emailUser + '",','"' + emailDomain + '",','"' + latitude + '",','"' + longitude + '"']
+    vars = ['startNum', 'endNum','nicknameFile','randomPassword','screenshotResult','screenshotOnFailure','username','password','emailUser','emailDomain','latitude','longitude','country']
+    new_values = [startNum + ',',endNum + ',',nicknameFile + ',',randomPassword + ',',screenshotResult + ',',screenshotOnFailure + ',','"' + username + '",','"' + password + '",','"' + emailUser + '",','"' + emailDomain + '",','"' + latitude + '",','"' + longitude + '",','"' + country + '"']
     what_to_change = dict(zip(vars,new_values))
 
     updating('config.js',what_to_change)
