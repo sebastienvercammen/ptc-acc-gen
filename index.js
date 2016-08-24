@@ -21,10 +21,10 @@ var email_user = configFile.emailUser;
 var email_domain = configFile.emailDomain;
 var lat = configFile.latitude;
 var lon = configFile.longitude;
+var country = configFile.country;
 // End Config File Imports
 
 // Reports of changing this tossing errors so i didnt touch
-var country = "US"; // Country code (e.g. BE, FR, US, CA)
 var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
 
 var outputFile = "PogoPlayer/accounts.csv"; // File which will contain the generated "username password" combinations.
