@@ -39,6 +39,7 @@ New beta install script! try running "install.bat" (and tell pyr0ball if somethi
   - or do it the easy way with `git submodule init && git submodule update`
   - if you cloned non-recursively, run install.bat.
 2. Install requirements with `npm install`
+3. Edit config.js if not using the install.bat or config.py.
 4. Run using `makeaccounts.bat`.
 5. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
 6. Repeat for all accounts
