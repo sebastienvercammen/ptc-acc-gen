@@ -1,7 +1,7 @@
 var config = {
 	// Starts gen from startNumber to endNumber, determining how many accounts are made
 startNum:0,
-endNum:10,
+endNum:2,
 	
 	// Creation Options
 // Use nicknames file, or just append numbers to username?
@@ -15,17 +15,17 @@ screenshotOnFailure:true,
 	
 	// Creation Requirements
 // Keep the '', User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
-username:"CHANGEME",
+username:"countryranq",
 // If you set randomPassword to 'false' above change this to your chosen password (so you have same password for all accounts)
-password:"CHANGEME",
+password:"NOSTATIC",
 // Enter your email address name. If your address is email@domain.com you'd enter 'email'
-emailUser:"email",
+emailUser:"frost",
 // Domain of email address. If your address is email@domain.com  you'd enter 'domain.com'
-emailDomain:"gmail.com",
+emailDomain:"frostthefox.pw",
 // Location Latitude for initial login
-latitude:"36.54596",
+latitude:"40.6706",
 // Location Longitude for initial login
-longitude:"-79.22247",
+longitude:"78.2386",
 // Country code (e.g. BE, FR, US, CA)
 country:"US"
 };
