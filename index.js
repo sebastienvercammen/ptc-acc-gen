@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Requires
 var Nightmare = require('nightmare');
 var nicknames = require('./nicknames.json');
