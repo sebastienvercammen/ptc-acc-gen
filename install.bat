@@ -24,6 +24,5 @@ if not "%errorlevel%" == "0" (
 		)
 	)
 )
-@echo on
 python config.py
 pause
