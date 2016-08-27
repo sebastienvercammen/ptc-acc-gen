@@ -262,7 +262,6 @@ function evaluateSignupPage() {
     var username_field = document.getElementById("id_username");
     return ((document.title === "The Official Pokémon Website | Pokemon.com") && (username_field !== null));
 }
-=======
 // Requires
 var Nightmare = require('nightmare');
 var nicknames = require('./nicknames.json');
