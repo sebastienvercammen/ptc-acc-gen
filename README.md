@@ -95,7 +95,7 @@ In [config.js](config.js):
 
 ### 4. Use a list of unique usernames instead of USERx combinations.
 
-  To create a number of accounts with custom usernames instead of user + number combinations, change [index.js](index.js):
+  To create a number of accounts with custom usernames instead of user + number combinations, change [config.js](config.js):
 
   Set nicknameFile: true, in [config.js](config.js).
  
