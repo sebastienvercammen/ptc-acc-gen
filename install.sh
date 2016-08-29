@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo apt-get install libnss3-dev
-sudo apt-get install libxss1
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y libnss3-dev libxss1 git
 which git 2>&1 >/dev/null
 if [ $? -ne 0 ] ; then
         echo git is not currently installed
@@ -14,7 +14,7 @@ if [ $? -ne 0 ] ; then
 			echo git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
 	fi
 		sudo apt-get update 2> /dev/null
-		sudo apt-get install -y npm nodejs
+		sudo apt-get install -y nodejs nodejs-legacy
 	if [ $? -ne 0 ] ; then
 			echo depenencies install failed. Please use the installer of your choice to grab them
 			echo examples:
