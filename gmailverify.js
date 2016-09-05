@@ -13,6 +13,8 @@
    4. Wait until fully completed, DO NOT LEAVE THE PAGE! (When finished, the text "running..." at the top will disappear.)
    5. Click View > Logs. At the bottom you'll see the total accounts verified.
    6. Enjoy
+   
+   Note: The script will stop after about 98 emails. This is a limitation of Google Scripts, not the script itself. Simply run again and it will process the remaining emails.
 */
 
 function myFunction() {
