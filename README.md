@@ -1,6 +1,6 @@
 # Nintendo PTC Account Generator
 
-***Supported once again! Please use the [PokemonGo-Dev Discord](https://discord.gg/g6k7w83) for questions.***
+***Supported once again! Please use the [PokemonGo-Map Discord](https://discord.gg/g6k7w83) for questions.***
 
 **Please be sure to clone RECURSIVELY**
 example: git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
