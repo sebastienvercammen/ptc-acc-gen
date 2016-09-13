@@ -24,6 +24,25 @@ var lon = configFile.longitude;
 var country = configFile.country;
 // End Config File Imports
 
+// argv parse
+var argv = require('minimist')(process.argv.slice(2));
+if (argv['h']) { 
+	console.log("usage: index.js [-h] [-u USERNAME] [-s START] [-e END]");
+	console.log("");
+	console.log("An automation script based on Nightmare.js.");
+	console.log("Can create any number of Nintendo Pokémon Trainer Club accounts,");
+       	console.log("with a single e-mail address.");	
+	console.log("");
+	console.log("optional arguments:");
+	console.log("	-u	The usernane used.")
+	console.log("	-s	Starting number.")
+	console.log("	-e	Ending number.")
+	process.exit();
+}
+if (argv['u']) { username=argv['a'] }
+if (argv['s']) { start=argv['s'] }
+if (argv['e']) { end=argv['e'] }
+
 // Reports of changing this tossing errors so i didnt touch
 var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
 
