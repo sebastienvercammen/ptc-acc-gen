@@ -44,6 +44,8 @@ New beta install script! try running "install.bat" (and tell pyr0ball if somethi
 6. Repeat for all accounts
 7. Find the generated accounts in PogoPlayer/accounts.csv.
 
+There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
+
 Some information about usernames: 6-10 is recommended, due to trainer name limit of 12, and the gen adding at least 1 number. You can use up to 15 chars (which means you can only gen a max of 9 accs, since beyond 10 it will be over the limit.) but PogoPlayer will not assign a trainer name properly.
 
 Basically, you need to account for the gen adding the acc number after the username you pick.
@@ -57,7 +59,8 @@ Linux Instructions:
 4. Repeat for all accounts
 5. Find the generated accounts in PogoPlayer/accounts.csv.
 
- 
+There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
+
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
 
 
