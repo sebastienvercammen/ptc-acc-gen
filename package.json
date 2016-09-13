@@ -20,6 +20,7 @@
   "author": "Frost The Fox, originally Sébastien Vercammen",
   "dependencies": {
     "nightmare": "^2.6.0",
-    "pogobuf": "^1.4.0"
+    "pogobuf": "^1.4.0",
+    "minimist": "^1.2.0"
   }
 }
