@@ -60,6 +60,7 @@ Linux Instructions:
 5. Find the generated accounts in PogoPlayer/accounts.csv.
 
 There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
+
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
 
 
