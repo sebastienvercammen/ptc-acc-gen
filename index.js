@@ -2,6 +2,7 @@
 var Nightmare = require('nightmare');
 var nicknames = require('./nicknames.json');
 var fs = require('fs');
+var request = require('request');
 
 // Settings
 var debug = false;
@@ -22,6 +23,7 @@ var email_domain = configFile.emailDomain;
 var lat = configFile.latitude;
 var lon = configFile.longitude;
 var country = configFile.country;
+var captchaApiKey = configFile.captchaApiKey;
 // End Config File Imports
 
 // argv parse
@@ -235,41 +237,75 @@ function fillSignupPage(ctr) {
             document.getElementById("id_username").value = data.nick;
 		window.scrollTo(0,document.body.scrollHeight);
         }, { "pass": _pass, "nick": _nick, "email_user": email_user, "email_domain": email_domain })
-        .check("#id_terms")
-        .wait(function() {
-            return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
-        })
-        .evaluate(function() {
-            return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
-        })
-        .then(function(success) {
-            if(success) {
-                // Log it in the file of used nicknames
-                var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass).replace('%LAT%', lat).replace('%LON%', lon).replace('%UN%', _nick);
-                fs.appendFile(outputFile, content, function(err) {
-                    //
-                });
-            }
-            
-            if((success && screenshotResult) || screenshotFail) {
-                // Screenshot
-                nightmare.screenshot(screenshotFolder + _nick + ".png");
-            }
-            
-            // Next one, or stop
-            if(ctr < end) {
-                return function() { createAccount(ctr + 1); };
-            } else {
-                return nightmare.end();
-            }
-        }).then(function(next) {
-            return next();
-        }).catch(handleError)
-        .then(function(err) {
-            if (typeof err !== "undefined") {
-                return handleSignupPage(ctr);
-            }
-        });
+        .check("#id_terms");
+		
+		
+		nightmare.evaluate(function(){
+			return document.getElementsByClassName("g-recaptcha")[0].getAttribute('data-sitekey');
+		}).then(function(result)
+		{
+			console.log("Start recaptcha solving");
+			request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function (error, response, body)
+			{
+				var checkCaptcha = function()
+				{
+					request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function (error, response, body)
+					{
+						if(body.substring(0, 2) == "OK")
+						{
+							var captchaValidation = body.substring(3);
+							nightmare.evaluate(function(data) {
+								document.getElementById("g-recaptcha-response").value = data.captchaValidation;
+							}, { captchaValidation: captchaValidation })
+							.click('.button-green[value=" Continue"]')
+							.then(function()
+							{
+								 nightmare.wait(function() {
+										return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
+									})
+									.evaluate(function() {
+										return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
+									})
+									.then(function(success) {
+										if(success) {
+											// Log it in the file of used nicknames
+											var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass).replace('%LAT%', lat).replace('%LON%', lon).replace('%UN%', _nick);
+											fs.appendFile(outputFile, content, function(err) {
+												//
+											});
+										}
+										
+										if((success && screenshotResult) || screenshotFail) {
+											// Screenshot
+											nightmare.screenshot(screenshotFolder + _nick + ".png");
+										}
+										
+										// Next one, or stop
+										if(ctr < end) {
+											return function() { createAccount(ctr + 1); };
+										} else {
+											return nightmare.end();
+										}
+									}).then(function(next) {
+										return next();
+									}).catch(handleError)
+									.then(function(err) {
+										if (typeof err !== "undefined") {
+											return handleSignupPage(ctr);
+										}
+									});
+							});
+						}
+						else
+						{
+							// Not ready yet...
+							setTimeout(checkCaptcha, 2000);
+						}
+					});
+				};
+				setTimeout(checkCaptcha, 2000);
+			});
+		});
 }
 
 // Evaluations
