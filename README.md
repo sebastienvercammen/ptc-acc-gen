@@ -51,7 +51,7 @@ Some information about usernames: 6-10 is recommended, due to trainer name limit
 Basically, you need to account for the gen adding the acc number after the username you pick.
 
 Linux Instructions:  
-***Headless systems will no longer be able to use the gen due to the captcha requirement.***
+***Headless systems will no longer be able to use the gen due to the captcha requirement, unless you use the autovalidation using 2captcha service (see below)***
 
 1. Run `install.sh`
 2. Run using `makeaccounts.sh`.
@@ -63,6 +63,13 @@ There is a few command line arguments for index.js if you run manually. `node in
 
 ***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
 
+Auto-validation Instructions:
+
+1. Create a 2Captcha account at http://2captcha.com/
+2. Make a deposit or start working to have a positive balance
+3. Navigate to "2Captcha API" page and copy the API KEY
+4. Update config.js to enable autovalidation and paste your API KEY
+5. That's it, run the script as usual. You will be switched back to headless mode automatically
 
 ## Configuration
 ### 1. Generate 10 accounts in the format USERx, where x is 0 to 9.
