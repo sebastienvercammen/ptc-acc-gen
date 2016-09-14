@@ -27,6 +27,9 @@ var useAutoCatcha = configfile.useAutoCatcha;
 var captchaApiKey = configFile.captchaApiKey;
 // End Config File Imports
 
+if(useAutoCatcha)
+	showWindow = false;
+
 // argv parse
 var argv = require('minimist')(process.argv.slice(2));
 if (argv['h']) { 
