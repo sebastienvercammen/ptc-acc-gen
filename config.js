@@ -27,7 +27,11 @@ latitude:"36.54596",
 // Location Longitude for initial login
 longitude:"-79.22247",
 // Country code (e.g. BE, FR, US, CA)
-country:"US"
+country:"US",
+
+// 2Captcha API key
+useAutoCatcha: true,
+captchaApiKey: "YOUR_2CAPTCHA_API_KEY_HERE"
 };
 
 module.exports = config;
