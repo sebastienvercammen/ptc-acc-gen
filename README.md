@@ -113,9 +113,4 @@ In [config.js](config.js):
   Set nicknameFile: true, in [config.js](config.js).
  
   The list of unique usernames must be stored in [nicknames.json](nicknames.json). An example is available on the repo.
-  
-  
-  2Captcha Configuration:
-  
-  Edit config.js and set useAutoCatcha (yes, aware of the mistake but it's consistenly used so no harm) to true, and define your 2captcha api key.
-  Run normally.
+ 
