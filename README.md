@@ -66,7 +66,7 @@ There is a few command line arguments for index.js if you run manually. `node in
 Auto-validation Instructions:
 
 1. Create a 2Captcha account at http://2captcha.com/
-2. Make a deposit of start working to have a positive balance
+2. Make a deposit or start working to have a positive balance
 3. Navigate to "2Captcha API" page and copy the API KEY
 4. Update config.js to enable autovalidation and paste your API KEY
 5. That's it, run the script as usual. You will be switched back to headless mode automatically
