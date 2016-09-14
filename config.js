@@ -30,7 +30,7 @@ longitude:"-79.22247",
 country:"US",
 
 // 2Captcha API key
-useAutoCatcha: true,
+useAutoCatcha: false,
 captchaApiKey: "YOUR_2CAPTCHA_API_KEY_HERE"
 };
 
