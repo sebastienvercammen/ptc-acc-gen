@@ -23,7 +23,7 @@ var email_domain = configFile.emailDomain;
 var lat = configFile.latitude;
 var lon = configFile.longitude;
 var country = configFile.country;
-var useAutoCatcha = configfile.useAutoCatcha;
+var useAutoCatcha = configFile.useAutoCatcha;
 var captchaApiKey = configFile.captchaApiKey;
 // End Config File Imports
 
@@ -66,7 +66,7 @@ var nightmare_opts = {
     loadTimeout: 5000
 };
 // Prints nice little message
-console.log("ptc-acc-gen v2.5.0 hotfix r3 by Sébastien Vercammen and Frost The Fox (and Github contribs)");
+console.log("ptc-acc-gen v2.6.0 hotfix r1 by Sébastien Vercammen and Frost The Fox (and Github contribs)");
 
 
 // Settings check
