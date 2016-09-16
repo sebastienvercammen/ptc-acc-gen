@@ -3,7 +3,9 @@
   "version": "2.6.0",
   "description": "An automation script based on NodeJS that can create any number of Nintendo Pokémon Trainer Club (PTC) accounts with a single e-mail address.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "jshint index.js"
+  },
   "repository" :
   { "type" : "git"
   , "url" : "https://github.com/FrostTheFox/ptc-acc-gen.git"
