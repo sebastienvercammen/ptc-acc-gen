@@ -50,9 +50,6 @@ if (argv['u']) { username=argv['a']; }
 if (argv['s']) { start=argv['s']; }
 if (argv['e']) { end=argv['e']; }
 
-// Reports of changing this tossing errors so i didnt touch
-var dob = "1990-01-01"; // Date of birth, yyyy-mm-dd
-
 var outputFile = "PogoPlayer/accounts.csv"; // File which will contain the generated "username password" combinations.
 var outputFormat = "ptc,%NICK%,%PASS%,%LAT%,%LON%,%UN%\r\n"; // Format used to save the account data in outputFile. Supports %NICK%, %PASS%.
 var screenshotFolder = "output/screenshots/";
@@ -160,15 +157,16 @@ function fillFirstPage(ctr) {
     }
     
     nightmare.evaluate(function(data) {
-            document.getElementById("id_dob").value = data.dob;
-            
+            var dob = new Date((new Date).getTime() - (Math.random() * (new Date).getTime()) - 18*365*24*60*60*1000 );
+            document.getElementById("id_dob").value = dob.getFullYear() + "-" + dob.getMonth()+1 + "-" + dob.getDate();
+
             var els = document.getElementsByName("id_country");
             for(var i = 0; i < els.length; i++) {
                 els[i].value = data.country;
             }
             
             return document.getElementById("id_dob").value;
-        }, { dob: dob, country: country })
+        }, { country: country })
         .click("form[name='verify-age'] [type=submit]")
         .wait("#id_username")
         .then(function() {
