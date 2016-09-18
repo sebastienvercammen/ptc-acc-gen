@@ -238,8 +238,8 @@ function fillSignupPage(ctr) {
 		nightmare.evaluate(function(data) {
 				document.getElementById("id_password").value = data.pass;
 				document.getElementById("id_confirm_password").value = data.pass;
-				document.getElementById("id_email").value = data.email_user == "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
-				document.getElementById("id_confirm_email").value = data.email_user == "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
+				document.getElementById("id_email").value = data.email_user === "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
+				document.getElementById("id_confirm_email").value = data.email_user === "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
 				document.getElementById("id_screen_name").value = data.nick;
 				document.getElementById("id_username").value = data.nick;
 			window.scrollTo(0,document.body.scrollHeight);
@@ -319,8 +319,8 @@ function fillSignupPage(ctr) {
 		nightmare.evaluate(function(data) {
 				document.getElementById("id_password").value = data.pass;
 				document.getElementById("id_confirm_password").value = data.pass;
-				document.getElementById("id_email").value = data.email_user == "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
-				document.getElementById("id_confirm_email").value = data.email_user == "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
+				document.getElementById("id_email").value = data.email_user === "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
+				document.getElementById("id_confirm_email").value = data.email_user === "" ? data.nick + "@" + data.email_domain : data.email_user + "+" + data.nick + "@" + data.email_domain;
 				document.getElementById("id_screen_name").value = data.nick;
 				document.getElementById("id_username").value = data.nick;
 			window.scrollTo(0,document.body.scrollHeight);
