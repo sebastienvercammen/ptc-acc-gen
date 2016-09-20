@@ -158,7 +158,7 @@ def configBuilder():
                     flag = 0
 
     vars = ['startNum', 'endNum','nicknameFile','randomPassword','screenshotResult','screenshotOnFailure','username','password','emailUser','emailDomain','latitude','longitude','country']
-    new_values = [startNum + ',',endNum + ',',nicknameFile + ',',randomPassword + ',',screenshotResult + ',',screenshotOnFailure + ',','"' + username + '",','"' + password + '",','"' + emailUser + '",','"' + emailDomain + '",','"' + latitude + '",','"' + longitude + '",','"' + country + ',','"']
+    new_values = [startNum + ',',endNum + ',',nicknameFile + ',',randomPassword + ',',screenshotResult + ',',screenshotOnFailure + ',','"' + username + '",','"' + password + '",','"' + emailUser + '",','"' + emailDomain + '",','"' + latitude + '",','"' + longitude + '",','"' + country + '",','"']
     what_to_change = dict(zip(vars,new_values))
 
     updating('config.js',what_to_change)
