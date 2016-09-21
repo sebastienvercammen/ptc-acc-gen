@@ -1,6 +1,6 @@
 {
   "name": "nintendo-ptc-account-generator",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "An automation script based on NodeJS that can create any number of Nintendo Pokémon Trainer Club (PTC) accounts with a single e-mail address.",
   "main": "index.js",
   "scripts": {
