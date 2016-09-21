@@ -158,7 +158,7 @@ function fillFirstPage(ctr) {
     
     nightmare.evaluate(function(data) {
             var dob = new Date((new Date()).getTime() - (Math.random() * (new Date()).getTime()) - 18*365*24*60*60*1000 );
-            document.getElementById("id_dob").value = dob.getFullYear() + "-" + dob.getMonth()+1 + "-" + dob.getDate();
+            document.getElementById("id_dob").value = dob.getFullYear() + "-" + (dob.getMonth()+1) + "-" + dob.getDate();
 
             var els = document.getElementsByName("id_country");
             for(var i = 0; i < els.length; i++) {
