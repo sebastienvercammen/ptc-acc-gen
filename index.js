@@ -64,7 +64,7 @@ var nightmare_opts = {
     loadTimeout: 5000
 };
 // Prints nice little message
-console.log("ptc-acc-gen v2.7.0 by Sébastien Vercammen and Frost The Fox (and Github contribs)");
+console.log("ptc-acc-gen v2.7.0 hotfix r1 by Sébastien Vercammen and Frost The Fox (and Github contribs)");
 
 
 // Settings check
@@ -160,7 +160,7 @@ function fillFirstPage(ctr) {
             var dob = new Date((new Date()).getTime() - (Math.random() * (new Date()).getTime()) - 18*365*24*60*60*1000 );
             document.getElementById("id_dob").value = dob.getFullYear() + "-" + (dob.getMonth()+1) + "-" + dob.getDate();
 
-            var els = document.getElementsByName("id_country");
+            var els = document.getElementsByName("country");
             for(var i = 0; i < els.length; i++) {
                 els[i].value = data.country;
             }
