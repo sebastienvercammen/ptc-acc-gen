@@ -1,6 +1,6 @@
 # Nintendo PTC Account Generator [![Build Status](https://travis-ci.org/FrostTheFox/ptc-acc-gen.svg?branch=master)](https://travis-ci.org/FrostTheFox/ptc-acc-gen)
 
-***Note: PTC making functions work fine, but ToS verification and catching starter is awaiting new API. Run manually using `node index.js` for now. When the API is solved, you can manually run with `node pogo.js` in the PogoPlayer folder.***
+***Note: PTC making functions work fine, but ToS verification and catching starter is awaiting new API. Run manually using `node index.js` for now. When the API is solved, you can manually run the ToS and starter with `node pogo.js` in the PogoPlayer folder.***
 ***Supported once again! Please use the [PokemonGo-Map Discord](https://discord.gg/g6k7w83) for questions.***
 
 **Please be sure to clone RECURSIVELY**
