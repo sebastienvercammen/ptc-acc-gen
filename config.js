@@ -14,7 +14,7 @@ screenshotResult:true,
 screenshotOnFailure:true,
 	
 	// Creation Requirements
-// Keep the '', User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
+// Keep the '', User- & display name. It is recommended to keep the username set in your config to around 6 characters.
 username:"CHANGEME",
 // If you set randomPassword to 'false' above change this to your chosen password (so you have same password for all accounts)
 password:"NOSTATIC",

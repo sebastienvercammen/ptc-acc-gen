@@ -48,7 +48,7 @@ def configBuilder():
     randomPassword = raw_input("Use Random Password? (recommend: true): ")
     screenshotResult = raw_input("Save Screenshot of each Success? (recommend: true): ")
     screenshotOnFailure = raw_input("Save Screenshot of each Failure? (recommend: true): ")
-    username = raw_input("Choose User/Display name, at least 6 chars and less than 15: ")
+    username = raw_input("Choose User/Display name, at least 6 chars (recommended) and less than 15: ")
     if randomPassword.lower() in ("false"):
             password = raw_input("Choose Static Password for Accounts: ")
     else:

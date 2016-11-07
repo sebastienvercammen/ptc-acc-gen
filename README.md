@@ -1,6 +1,7 @@
 # Nintendo PTC Account Generator [![Build Status](https://travis-ci.org/FrostTheFox/ptc-acc-gen.svg?branch=master)](https://travis-ci.org/FrostTheFox/ptc-acc-gen)
 
-***Note: PTC making functions work fine, but ToS verification and catching starter is awaiting new API. Run manually using `node index.js` for now. When the API is solved, you can manually run the ToS and starter with `node pogo.js` in the PogoPlayer folder.***
+***Pogobuf has been updated for the new API, I have adjusted the dependencies as such. If you generated accounts during the API downtime, you can run `node pogo.js` in the PogoPlayer folder to ToS verify those accounts. Otherwise, use the normal instructions.***
+
 ***Supported once again! Please use the [PokemonGo-Map Discord](https://discord.gg/g6k7w83) for questions.***
 
 **Please be sure to clone RECURSIVELY**
@@ -30,31 +31,24 @@ The new version on Nightmare.js now:
 ## Usage
 Windows Instructions:
 
-New beta install script! try running "install.bat" (and tell pyr0ball if something doesn't work)
-  - If using the install script, you can simply run makeaccounts.bat afterwards.
-
 
 1. Make sure you clone recursively (git clone --recursive [origin])
-  - if you download the zip, make sure you also download the submodule PogoPlayer
-  - or do it the easy way with `git submodule init && git submodule update`
-  - if you cloned non-recursively, run install.bat.
+  - if you download the zip, make sure you also download the submodule PogoPlayer.
+  - if you cloned non-recursively, be sure to run `git submodule init && git submodule update` or ToS verification will not work.
 2. Install requirements with `npm install`
-3. Edit config.js if not using the install.bat or config.py.
+3. Run config.py or edit config.js manually. (you will have to edit manually for 2captcha)
 4. Run using `makeaccounts.bat`.
 5. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
 6. Repeat for all accounts
 7. Find the generated accounts in PogoPlayer/accounts.csv.
 
-There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
-
-Some information about usernames: 6-10 is recommended, due to trainer name limit of 12, and the gen adding at least 1 number. You can use up to 15 chars (which means you can only gen a max of 9 accs, since beyond 10 it will be over the limit.) but PogoPlayer will not assign a trainer name properly.
-
-Basically, you need to account for the gen adding the acc number after the username you pick.
+It is recommended to keep the username set in your config to around 6 characters.
 
 Linux Instructions:  
 ***Headless systems will no longer be able to use the gen due to the captcha requirement, unless you use the autovalidation using 2captcha service (see below)***
 
-1. Run `install.sh`
+1. Run `npm install`
+2. Run config.py or edit config.js manually. (you will need to edit manually for 2captcha)
 2. Run using `makeaccounts.sh`.
 3. Wait for the generator to fill in the second page, then accept the captcha and hit submit.
 4. Repeat for all accounts
@@ -62,7 +56,7 @@ Linux Instructions:
 
 There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
 
-***Note: Messages about trainer name usually are not a problem and you generally shouldn't be concerned by them.***
+It is recommended to keep the username set in your config to around 6 characters.
 
 Auto-validation Instructions:
 
