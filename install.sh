@@ -11,7 +11,7 @@ if [ $? -ne 0 ] ; then
 	if [ $? -ne 0 ] ; then
 			echo submodule install failed.
 			echo Maybe try cloning recursively?
-			echo git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
+			echo git clone --recursive https://github.com/sebastienvercammen/ptc-acc-gen.git
 	fi
 		sudo apt-get update 2> /dev/null
 		sudo apt-get install -y nodejs nodejs-legacy

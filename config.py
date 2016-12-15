@@ -54,11 +54,11 @@ def configBuilder():
     else:
             password = "NOSTATIC"
     emailUser = raw_input("Email Address Name (whats before the @ in your email address? ex: yoloswag420): ")
-    emailDomain = raw_input("Email Domain (whats after the @ in your email address? ex: gmail.com): ")
+    emailDomain = raw_input("Email Domain (whats after the @ in your email address? ex: hotmail.com): ")
     latitude = raw_input("Latitude for Registration (example: 36.54596): ")
     longitude = raw_input("Longitude for Registration (example: -79.22247): ")
     country = raw_input("Country Code for Registration (example: US, BE, FR, CA): ")
-    
+
     #Now lets check what people input vs what is valid
     flag = 1
     while flag == 1:
@@ -106,7 +106,7 @@ def configBuilder():
                     print "Your Current Longitude: %s" %(longitude)
                     startNum = raw_input("Longitude for Registration (example: -79.22247): ")
                     flag = 1
-                    
+
             if startNum > endNum:
                     print (30 * '-')
                     print "Your Number for Accounts to End at must be greater than Number for Accounts to Start at"
@@ -122,7 +122,7 @@ def configBuilder():
                     nicknameFile = raw_input("Use Nickname File? (recommend: false): ")
                     flag = 1
             else:
-                    flag = 0                    
+                    flag = 0
             if randomPassword.lower() not in ("true", "false"):
                     print (30 * '-')
                     print "You didn't type 'true' or 'false' for Use Random Password: %s" %(randomPassword)
@@ -162,7 +162,7 @@ def configBuilder():
     what_to_change = dict(zip(vars,new_values))
 
     updating('config.js',what_to_change)
-    
+
     raw_input("Config Built Successfully! Press Enter")
     printmenu()
 
@@ -175,7 +175,7 @@ def updating(filename,dico):
         return dic[mat.group(2)].join(mat.group(1,3))
 
     with open(filename,'rb') as f:
-        content = f.read() 
+        content = f.read()
 
     with open(filename,'wb') as f:
         f.write(pat.sub(jojo,content))

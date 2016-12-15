@@ -2,7 +2,7 @@
 
 ***Supported once again! Please use the [PokemonGo-Map Discord](https://discord.gg/g6k7w83) for questions.***
 
-***It seems Nintendo has patched the + e-mail trick for Gmail. Some users on our Discord have tested and reported that Gmail now requires a 220+ second cooldown period between creation of accounts. Using another e-mail provider (tested with hotmail) still works fine.***
+***It seems Nintendo has patched the + e-mail trick for Gmail. Some users on our Discord have tested and reported that Gmail now requires a 220+ second cooldown period between creation of accounts. Using another e-mail provider (tested with hotmail) still works. For automatic validation, forward all PTC account e-mails to a Gmail account and use our auto-verifier.***
 
 **Please be sure to clone RECURSIVELY**
 example: git clone --recursive https://github.com/sebastienvercammen/ptc-acc-gen.git

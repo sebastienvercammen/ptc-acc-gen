@@ -13,7 +13,7 @@ if not "%errorlevel%" == "0" (
 	if not "%errorlevel%" == "0" (
 		echo submodule install failed.
 		echo Maybe try cloning recursively?
-		echo git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
+		echo git clone --recursive https://github.com/sebastienvercammen/ptc-acc-gen.git
 	) else (
 		node --version >NUL
 		if "%errorlevel%" == "9009" (
