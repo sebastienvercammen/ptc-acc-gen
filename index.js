@@ -41,13 +41,13 @@ if (argv['h']) {
     console.log("with a single e-mail address.");
     console.log("");
     console.log("optional arguments:");
-    console.log("	-u	The usernane used.");
+    console.log("	-u	The username used.");
     console.log("	-s	Starting number.");
     console.log("	-e	Ending number.");
     process.exit();
 }
 if (argv['u']) {
-    username = argv['a'];
+    username = argv['u'];
 }
 if (argv['s']) {
     start = argv['s'];
