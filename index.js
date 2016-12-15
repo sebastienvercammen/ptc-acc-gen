@@ -297,6 +297,8 @@ function fillSignupPage(ctr) {
             request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function(error, response, body) {
                 var checkCaptcha = function() {
                     request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function(error, response, body) {
+                        if (error) throw error;
+
                         if (body.substring(0, 2) == "OK") {
                             var captchaValidation = body.substring(3);
                             nightmare.evaluate(function(data) {
