@@ -127,7 +127,7 @@ function getRandomNumbers(length) {
 function getRandomSymbols(length) {
     var str = "";
 
-    for (let i = 0; i < length; i++) {
+    for (var i = 0; i < length; i++) {
         str += symbols[getRandomInt(0, symbols.length - 1)];
     }
 
