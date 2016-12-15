@@ -294,7 +294,10 @@ function fillSignupPage(ctr) {
             return document.getElementsByClassName("g-recaptcha")[0].getAttribute('data-sitekey');
         }).then(function(result) {
             console.log("Start recaptcha solving");
+
             request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function(error, response, body) {
+                if (error) throw error;
+                
                 var checkCaptcha = function() {
                     request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function(error, response, body) {
                         if (error) throw error;
