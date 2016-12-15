@@ -28,7 +28,7 @@ function myFunction() {
 
     messages.forEach(function(msg) {
       var value = msg.getBody()
-                     .match(/Verify your email/m);
+                     .match(/verify your email/m);
 
       if(msg.isInInbox() && value) {
         var link = msg.getBody().match(/<a href="https:\/\/club.pokemon.com\/us\/pokemon-trainer-club\/activated\/([\w\d]+)"/);
