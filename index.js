@@ -317,8 +317,10 @@ function fillSignupPage(ctr) {
                                                 // Log it in the file of used nicknames
                                                 var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass).replace('%LAT%', lat).replace('%LON%', lon).replace('%UN%', _nick);
                                                 fs.appendFile(outputFile, content, function(err) {
-                                                    //
+                                                    if (err) throw err;
                                                 });
+                                            } else {
+                                                console.log("[x] Failed username " + _nick);
                                             }
 
                                             if ((success && screenshotResult) || screenshotFail) {
@@ -379,8 +381,10 @@ function fillSignupPage(ctr) {
                     // Log it in the file of used nicknames
                     var content = outputFormat.replace('%NICK%', _nick).replace('%PASS%', _pass).replace('%LAT%', lat).replace('%LON%', lon).replace('%UN%', _nick);
                     fs.appendFile(outputFile, content, function(err) {
-                        //
+                        if (err) throw err;
                     });
+                } else {
+                    console.log("[x] Failed username " + _nick);
                 }
 
                 if ((success && screenshotResult) || screenshotFail) {
