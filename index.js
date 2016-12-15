@@ -135,7 +135,8 @@ function getRandomSymbols(length) {
 }
 
 function randomPassword() {
-    return Math.random().toString(36).substr(2, 8) + getRandomNumbers(3) + getRandomSymbols(3);
+    // Your password must include upper and lower case letters, numbers and symbols (such as #?!@$%%^&><+`*()-])
+    return (Math.random().toString(36)+'00000000000000000').slice(2, 8) + getRandomNumbers(3) + getRandomSymbols(3) + "ABC";
 }
 
 function prepareNightmare(nightmare) {
