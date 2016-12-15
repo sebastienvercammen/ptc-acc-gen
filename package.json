@@ -6,11 +6,11 @@
   "scripts": {
     "test": "jshint index.js config.js"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/FrostTheFox/ptc-acc-gen.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastienvercammen/ptc-acc-gen.git"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "keywords": [
     "nintendo",
     "ptc",
@@ -21,9 +21,9 @@
   ],
   "author": "Frost The Fox, originally Sébastien Vercammen",
   "dependencies": {
+    "minimist": "^1.2.0",
     "nightmare": "^2.6.0",
     "pogobuf": "^1.8.0",
-    "minimist": "^1.2.0",
-    "request": "^2.74.0"
+    "request": "^2.79.0"
   }
 }

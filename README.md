@@ -1,26 +1,26 @@
-# Nintendo PTC Account Generator [![Build Status](https://travis-ci.org/FrostTheFox/ptc-acc-gen.svg?branch=master)](https://travis-ci.org/FrostTheFox/ptc-acc-gen)
-
-***Pogobuf has been updated for the new API, I have adjusted the dependencies as such. If you generated accounts during the API downtime, you can run `node pogo.js` in the PogoPlayer folder to ToS verify those accounts. Otherwise, use the normal instructions.***
+# Nintendo PTC Account Generator [![Build Status](https://travis-ci.org/sebastienvercammen/ptc-acc-gen.svg?branch=master)](https://travis-ci.org/sebastienvercammen/ptc-acc-gen)
 
 ***Supported once again! Please use the [PokemonGo-Map Discord](https://discord.gg/g6k7w83) for questions.***
 
-**Please be sure to clone RECURSIVELY**
-example: git clone --recursive https://github.com/FrostTheFox/ptc-acc-gen.git
+***It seems Nintendo has patched the + e-mail trick for Gmail. Some users on our Discord have tested and reported that Gmail now requires a 220+ second cooldown period between creation of accounts. Using another e-mail provider (tested with hotmail) still works fine.***
 
-An automation script based on Nightmare.js that can create any number of Nintendo Pokémon Trainer Club accounts with a single  e-mail address. This only works because Nintendo doesn't check for "email+1@domain.com" e-mail tricks, where the e-mail host completely ignores any part after (and including) the plus sign and sends it to "email@domain.com".
+**Please be sure to clone RECURSIVELY**
+example: git clone --recursive https://github.com/sebastienvercammen/ptc-acc-gen.git
+
+An automation script based on Nightmare.js that can create any number of Nintendo Pokémon Trainer Club accounts with a single e-mail address. I originally used "email+1@domain.com" e-mail alias tricks - where the e-mail host completely ignores any part after (and including) the plus sign and sends it to "email@domain.com" - but this has since been patched, so we now use free e-mail forwarder jetable.org.
 
 This project was started as a proof of concept: even multi-billion dollar companies that just released the single most popular mobile game (Pokémon Go) sometimes miss the details.
 
 More about plus signs in e-mail addresses [on StackExchange](http://security.stackexchange.com/questions/65244/what-are-the-security-reasons-for-disallowing-the-plus-sign-in-email-addresses).
 
-If you're using Gmail and want to automatically verify all accounts, use https://github.com/FrostTheFox/ptc-acc-gen/blob/master/gmailverify.js 
+If you're using Gmail and want to automatically verify all accounts, use https://gist.github.com/sebastienvercammen/e7e0e9e57db246d7f941b789d8508186
 The instructions are at the top of the file.
 
 
 The new version on Nightmare.js now:
 
 * Checks for usernames/e-mails that are already taken
-* Can screenshot the result page
+* Can screenshot the result page (both on success and on failure)
 * Handles server issues better
 * Doesn't require PhantomJS/CasperJS or fiddling with the PATH environment variable
 
@@ -30,7 +30,6 @@ The new version on Nightmare.js now:
 
 ## Usage
 Windows Instructions:
-
 
 1. Make sure you clone recursively (git clone --recursive [origin])
   - if you download the zip, make sure you also download the submodule PogoPlayer.
@@ -54,7 +53,7 @@ Linux Instructions:
 4. Repeat for all accounts
 5. Find the generated accounts in PogoPlayer/accounts.csv.
 
-There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info. 
+There is a few command line arguments for index.js if you run manually. `node index.js -h` for more info.
 
 It is recommended to keep the username set in your config to around 6 characters.
 
@@ -75,13 +74,13 @@ In [config.js](config.js):
 // Starts gen from startNumber to endNumber, determining how many accounts are made
 	startNum: 0,
 	endNum: 10,
-	
+
 	// Creation Options
 	nicknameFile: false, // Use nicknames file, or just append numbers to username?
 	randomPassword: false, // If true generate a random password, If false set "password" field below
 	screenshotResult: true, // Saves a screenshot per account creation when set to true
 	screenshotOnFailure: true, // Saves a screenshot even if registration fails when set to true
-	
+
 	// Creation Requirements
 	username: 'CHANGEME', // Keep the '', User- & display name. Make sure any "(username + number)@domain.com" is 100% unique, and is 6 characters minimum, but under 14 characters after the numbers are applied.
 	password: 'CHANGEME', // If you set randomPassword to 'false' above change this to your chosen password (so you have same password for all accounts)
@@ -93,7 +92,7 @@ In [config.js](config.js):
 ### 2. Generate random passwords per account.
 
  Set randomPassword: true, in [config.js](config.js).
- 
+
  Password for accounts will be random, aftyer finished find usernames and passwords in /PogoPlayer/accounts.csv
 
 ### 3. Save screenshots (Default directory is /output/screenshots)
@@ -106,6 +105,5 @@ In [config.js](config.js):
   To create a number of accounts with custom usernames instead of user + number combinations, change [index.js](index.js):
 
   Set nicknameFile: true, in [config.js](config.js).
- 
+
   The list of unique usernames must be stored in [nicknames.json](nicknames.json). An example is available on the repo.
- 
