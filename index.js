@@ -314,13 +314,9 @@ function fillSignupPage(ctr) {
                                 .click('.button-green[value=" Continue"]')
                                 .then(function() {
                                     nightmare.wait(function() {
-                                            console.log("[DEBUG] Validating username in use.");
-
                                             return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
                                         })
                                         .evaluate(function() {
-                                            console.log("[DEBUG] Validating success.");
-
                                             return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
                                         })
                                         .then(function(success) {
@@ -382,13 +378,9 @@ function fillSignupPage(ctr) {
             })
             .check("#id_terms")
             .wait(function() {
-                console.log("[DEBUG] Waiting for non-captcha signup page.");
-
                 return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
             })
             .evaluate(function() {
-                console.log("[DEBUG] Validating non-captcha success.");
-
                 return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
             })
             .then(function(success) {
