@@ -105,7 +105,9 @@ function containsUppercase(txt) {
 }
 
 function containsSymbol(txt) {
-    return symbols.some(function(s) { return txt.indexOf(s) > -1; });
+    return symbols.some(function(s) {
+        return txt.indexOf(s) > -1;
+    });
 }
 
 function handleError(err) {
@@ -136,7 +138,7 @@ function getRandomSymbols(length) {
 
 function randomPassword() {
     // Your password must include upper and lower case letters, numbers and symbols (such as #?!@$%%^&><+`*()-])
-    return (Math.random().toString(36)+'00000000000000000').slice(2, 8) + getRandomNumbers(3) + getRandomSymbols(3) + "ABC";
+    return (Math.random().toString(36) + '00000000000000000').slice(2, 8) + getRandomNumbers(3) + getRandomSymbols(3) + "ABC";
 }
 
 function prepareNightmare(nightmare) {
@@ -297,7 +299,7 @@ function fillSignupPage(ctr) {
 
             request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function(error, response, body) {
                 if (error) throw error;
-                
+
                 var checkCaptcha = function() {
                     request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function(error, response, body) {
                         if (error) throw error;
@@ -312,9 +314,17 @@ function fillSignupPage(ctr) {
                                 .click('.button-green[value=" Continue"]')
                                 .then(function() {
                                     nightmare.wait(function() {
+                                            if (debug) {
+                                                console.log("[DEBUG] Validating username in use.");
+                                            }
+
                                             return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
                                         })
                                         .evaluate(function() {
+                                            if (debug) {
+                                                console.log("[DEBUG] Validating success.");
+                                            }
+
                                             return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
                                         })
                                         .then(function(success) {
@@ -376,9 +386,17 @@ function fillSignupPage(ctr) {
             })
             .check("#id_terms")
             .wait(function() {
+                if (debug) {
+                    console.log("[DEBUG] Waiting for non-captcha signup page.");
+                }
+
                 return (document.getElementById("signup-signin") !== null || document.getElementById("btn-reset") !== null || document.body.textContent.indexOf("That username already exists") > -1);
             })
             .evaluate(function() {
+                if (debug) {
+                    console.log("[DEBUG] Validating non-captcha success.");
+                }
+
                 return (document.body.textContent.indexOf("Hello! Thank you for creating an account!") > -1);
             })
             .then(function(success) {
