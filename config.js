@@ -31,7 +31,9 @@ var config = {
 
     // 2Captcha API key
     useAutoCatcha: false,
-    captchaApiKey: "YOUR_2CAPTCHA_API_KEY_HERE"
+    captchaApiKey: "YOUR_2CAPTCHA_API_KEY_HERE",
+    // turn on debug logging
+    debug: false
 };
 
 module.exports = config;
