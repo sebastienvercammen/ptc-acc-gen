@@ -271,6 +271,7 @@ function fillSignupPage(ctr) {
 
         // Get the first nickname off the list & use it
         _nick = nicknames.shift();
+        console.log("Using next account from nicknames file: " + _nick);
     }
 
     // Fill it all in
@@ -299,6 +300,8 @@ function fillSignupPage(ctr) {
 
             request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function(error, response, body) {
                 if (error) throw error;
+                
+                console.log("Checking status of captcha id: " + body.substring(3));
 
                 var checkCaptcha = function() {
                     request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function(error, response, body) {
