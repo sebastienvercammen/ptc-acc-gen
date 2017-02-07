@@ -6,7 +6,6 @@ var fs = require('fs');
 var request = require('request');
 
 // Settings
-var debug = false;
 var showWindow = true;
 
 // Start Config File Imports
@@ -26,6 +25,7 @@ var lon = configFile.longitude;
 var country = configFile.country;
 var useAutoCatcha = configFile.useAutoCatcha;
 var captchaApiKey = configFile.captchaApiKey;
+var debug = configFile.debug;
 // End Config File Imports
 
 if (useAutoCatcha)
@@ -164,7 +164,7 @@ function handleFirstPage(ctr) {
         .then(function(validated) {
             if (!validated) {
                 // Missing form data, loop over itself
-                console.log("[" + ctr + "] Servers are acting up... Trying again.");
+                console.log("[" + ctr + "] Unable to evaluate PTC DOB signup page... Trying again.");
                 return function() {
                     nightmare.wait(500).refresh().wait();
                     handleFirstPage(ctr);
@@ -228,7 +228,7 @@ function handleSignupPage(ctr) {
         .then(function(validated) {
             if (!validated) {
                 // Missing form data, loop over itself
-                console.log("[" + ctr + "] Servers are acting up... Trying again.");
+                console.log("[" + ctr + "] Unable to evaluate PTC signup page... Trying again.");
                 return function() {
                     nightmare.wait(500).refresh().wait();
                     handleFirstPage(ctr);
@@ -271,6 +271,7 @@ function fillSignupPage(ctr) {
 
         // Get the first nickname off the list & use it
         _nick = nicknames.shift();
+        console.log("Using next account from nicknames file: " + _nick);
     }
 
     // Fill it all in
@@ -299,6 +300,8 @@ function fillSignupPage(ctr) {
 
             request('http://2captcha.com/in.php?key=' + captchaApiKey + '&method=userrecaptcha&googlekey=' + result + '&pageurl=club.pokemon.com', function(error, response, body) {
                 if (error) throw error;
+                
+                console.log("Checking status of captcha id: " + body.substring(3));
 
                 var checkCaptcha = function() {
                     request('http://2captcha.com/res.php?key=' + captchaApiKey + '&action=get&id=' + body.substring(3), function(error, response, body) {
